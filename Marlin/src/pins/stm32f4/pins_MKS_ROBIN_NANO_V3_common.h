@@ -26,13 +26,10 @@
 // MKS Robin Nano V3, MKS Eagle pinmap
 //
 
-// #define MKS_TEST
-
-// USB Flash Drive support
-#define HAS_OTG_USB_HOST_SUPPORT
+#define HAS_OTG_USB_HOST_SUPPORT                  // USB Flash Drive support
 
 // Avoid conflict with TIMER_TONE
-#define STEP_TIMER                            10
+#define STEP_TIMER 10
 
 // Use one of these or SDCard-based Emulation will be used
 //#define SRAM_EEPROM_EMULATION                   // Use BackSRAM-based EEPROM emulation
@@ -148,14 +145,14 @@
 #endif
 
 #ifndef FIL_RUNOUT_PIN
-  #define FIL_RUNOUT_PIN            MT_DET_1_PIN
+  #define FIL_RUNOUT_PIN                    PA4
 #endif
 #ifndef FIL_RUNOUT2_PIN
-  #define FIL_RUNOUT2_PIN           MT_DET_2_PIN
+  #define FIL_RUNOUT2_PIN                   PE6
 #endif
 
 #ifndef POWER_LOSS_PIN
-  // #define POWER_LOSS_PIN                    PA13  // PW_DET
+  #define POWER_LOSS_PIN                    PA13  // PW_DET
 #endif
 
 //#define SUICIDE_PIN                       PB2
@@ -319,8 +316,6 @@
     #define TOUCH_ORIENTATION    TOUCH_LANDSCAPE
   #endif
 
-  #define USE_SPI_DMA_TC
-
 #elif HAS_WIRED_LCD
 
   #define LCD_PINS_ENABLE            EXP1_08_PIN
@@ -340,7 +335,7 @@
     //#define MKS_LCD12864B
     //#undef SHOW_BOOTSCREEN
 
-  #elif ENABLED(MKS_MINI_12864_V3)
+  #elif ENABLED(FYSETC_MINI_12864_2_1)
     #define DOGLCD_CS                EXP1_08_PIN
     #define DOGLCD_A0                EXP1_07_PIN
     #define LCD_PINS_DC                DOGLCD_A0
@@ -372,8 +367,8 @@
 #endif // HAS_WIRED_LCD
 
 #if ANY(TFT_COLOR_UI, TFT_LVGL_UI, TFT_CLASSIC_UI, HAS_WIRED_LCD)
-  // #define BEEPER_PIN                 EXP1_10_PIN
-  // #define BTN_EN1                    EXP2_08_PIN
-  // #define BTN_EN2                    EXP2_06_PIN
-  // #define BTN_ENC                    EXP1_09_PIN
+  #define BEEPER_PIN                 EXP1_10_PIN
+  #define BTN_EN1                    EXP2_08_PIN
+  #define BTN_EN2                    EXP2_06_PIN
+  #define BTN_ENC                    EXP1_09_PIN
 #endif
